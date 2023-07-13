@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A Coding Project by Murilo Barbosa</title>
+    <title>OddlyCount A Coding Project by Murilo Barbosa</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,6 +14,11 @@
     <script src="https://kit.fontawesome.com/5db21ba9c6.js" crossorigin="anonymous"></script>
 
     <link href="/css/site.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+
     <link rel="icon" type="image/svg" href="img/rect2596.png">
 </head>
 
@@ -21,8 +26,8 @@
     <!-- ++++++++ NAV SECTION ++++++++++++ -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html"><img src="img/mark3a.svg" class="d-inline-block align-text-top pb-1"
-                    width="35" height="30"> APP NAME</a>
+            <a class="navbar-brand logoFont" href="index.html"><img src="img/mark3a.svg"
+                    class="d-inline-block align-text-top pb-1" width="35" height="30"> OddlyCount</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -30,7 +35,7 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item">
-                        <a class="nav-link"  href="index.html">Home</a>
+                        <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="app.html">The App</a>
@@ -39,7 +44,7 @@
                         <a class="nav-link" href="code.html">The Code</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" target="_blank" href="#">Git Repo</a>
+                        <a class="nav-link" target="_blank" href="https://github.com/murilodab/OddlyCount">Git Repo</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" target="_blank" href="https://murilo-barbosa.netlify.app/">About</a>
@@ -51,10 +56,51 @@
     </nav>
     <!-- ++++++++ MAIN SECTION ++++++++++++ -->
     <main class="flex-shrink-0">
-    <div class="container"></div>    
+        <div class="container mt-5">
+            <div class="row row-cols-1 row-cols-lg-2">
+                <div class="col-lg-4 col border-end border-2">
+                    <h1>OddlyCount: A Coding Project</h1>
+                    <h4 class="lead">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum libero laboriosam doloribus
+                        sunt est eligendi quas cum vel? Optio incidunt recusandae praesentium laboriosam beatae minima
+                        rem similique est reiciendis. Ab!
+                    </h4>
+                    <h2 class="mt-5 border-bottom border-2">Instructions</h2>
+                    <p>Enter a starting value and an ending value. Press the button and the values will appear.</p>
+                </div>
+                <div class="col col-lg-8">
+                    <div>
+                        <h5>Enter Values</h5>
+                        <form class="row gy-2 gx-3">
+                            <div class="col">
+                                <input id="startValue" type="number" class="form-control" placeholder="Start Value"
+                                    value="0" aria-label="Start Value">
+
+                            </div>
+                            <div class="col">
+                                <input id="endValue" type="number" class="form-control" placeholder="End Value"
+                                value="100" aria-label="End Value">
+                            </div>
+                            <div class="col-12 d-flex justify-content-end">
+                                <button id="btnSubmit" type="button" class="btn btn-dark btn-lg">Count Oddly</button>
+                            </div> 
+                        </form>
+                        <h2 class="mt-5 border-bottom border-2">Results</h2>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-sm">
+                                <tbody id="results">
+                                    <!--Results Go Here-->
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
-     <!-- ++++++++ FOOTER SECTION ++++++++++++ -->
-     <footer class="footer mt-auto py-1">
+    <!-- ++++++++ FOOTER SECTION ++++++++++++ -->
+    <footer class="footer mt-auto py-1">
         <div class="container-fluid">
             <div class="row row-cols-1 row-cols-lg-3 gy-2">
                 <div class="col col-lg-5 order-last order-lg-first text-light justify-content-start pt-2">
@@ -87,5 +133,9 @@
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
     </script>
     <script src="js/site.js"></script>
-    </body>
+    <script>
+        document.getElementById("btnSubmit").addEventListener("click", getValues);
+    </script> 
+</body>
+
 </html>

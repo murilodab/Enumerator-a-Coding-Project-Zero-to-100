@@ -47,6 +47,13 @@ footer .social>a:hover {
     opacity: 85%;
 }
 
+.logoFont{
+    font-family: 'Caveat', cursive;
+    
+    font-size:23px;
+
+}
+
 .bsicon {
     color: #8312FA;
 }
@@ -66,6 +73,14 @@ footer .social>a:hover {
 .checklist>li i {
     color: var(--secondary-color);
 
+}
+
+.odd{
+font-weight: bold;
+}
+
+.even{
+font-weight: 100;
 }
 
 code[class*="language-"],

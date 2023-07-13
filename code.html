@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A Coding Project by Murilo Barbosa</title>
+    <title>OddlyCount: A Coding Project by Murilo Barbosa</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,6 +12,10 @@
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 
     <script src="https://kit.fontawesome.com/5db21ba9c6.js" crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
 
     <link href="/css/site.css" rel="stylesheet">
     <link href="/css/prism.css" rel="stylesheet">
@@ -23,8 +27,8 @@
     <!-- ++++++++ NAV SECTION ++++++++++++ -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html"><img src="img/mark3a.svg"
-                    class="d-inline-block align-text-top pb-1" width="35" height="30"> APP NAME</a>
+            <a class="navbar-brand logoFont" href="index.html"><img src="img/mark3a.svg"
+                    class="d-inline-block align-text-top pb-1" width="35" height="30"> OddlyCount</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -41,7 +45,7 @@
                         <a class="nav-link active" aria-current="page" href="code.html">The Code</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" target="_blank" href="#">Git Repo</a>
+                        <a class="nav-link" target="_blank" href="https://github.com/murilodab/OddlyCount">Git Repo</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" target="_blank" href="https://murilo-barbosa.netlify.app/">About</a>
@@ -54,14 +58,79 @@
     <!-- ++++++++ MAIN SECTION ++++++++++++ -->
     <main class="flex-shrink-0">
         <div class="container py-5 px-5 mt-5">
-            <h2 class="border-1 border-bottom border-dark">The Code for APP NAME</h2>
+            <h2 class="border-1 border-bottom border-dark">The Code for OddlyCount</h2>
             <div class="row row-cols-1 row-cols-lg-2">
                 <div class="col-lg-8">
                     <pre class="line-numbers"><code class="language-javascript">
-                        //Call Hello World
-                        function helloWorld(){
-                         alert("Hello World");
-                        }
+                        
+//get the values from the page
+//starts or controller function
+function getValues() {
+    //get values from the page
+    let startValue = document.getElementById("startValue").value;
+    let endValue = document.getElementById("endValue").value;
+    //We need to validate our input
+    //parse into Integers
+
+    startValue = parseInt(startValue);
+    endValue = parseInt(endValue);
+
+    if (Number.isInteger(startValue) && Number.isInteger(endValue)) {
+
+        //we call generateNumbers
+        let numbers = generateNumbers(startValue, endValue);
+
+        //we call displayNumbers
+        displayNumbers(numbers);
+
+    } else {
+        alert("You must enter Integers");
+    }
+
+
+
+}
+
+//generate numbers from starValue to endValue
+//logic function(s)
+function generateNumbers(sValue, eValue) {
+
+    let numbers = [];
+    //we want to get all numbers from start to end
+    for (let index = sValue; index <= eValue; index++) {
+
+        //This will execute in a loop until index = eValue
+
+        numbers.push(index);
+
+    }
+    return numbers;
+
+}
+
+//display the numbers and mark odd numbers bold
+//display or view functions
+function displayNumbers(numbers) {
+
+    let templateRows = "";
+
+    for (let index = 0; index < numbers.length; index++) {
+
+        let className = "odd";
+
+        let number = numbers[index];
+        if (number % 2 !== 0) {
+            className = "odd";
+        } else {
+            className="even";
+        }
+        
+        templateRows += `<tr><td class="${className}">${number}</td=></tr>`;
+    }
+
+    document.getElementById("results").innerHTML = templateRows;
+
+}
                     </code>
                 </pre>
                 </div>
@@ -105,7 +174,7 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="js/prism.js"></script>
     <script>
         Prism.plugins.NormalizeWhitespace.setDefaults({
@@ -115,6 +184,7 @@
             'right-trim': true
         })
     </script>
+
 </body>
 
 </html>
