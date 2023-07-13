@@ -1,2 +1,2 @@
-# JS-SiteTemplate
-Site Template for JS projects
+# JS-OddlyCount
+JS Site for a Coding Project
