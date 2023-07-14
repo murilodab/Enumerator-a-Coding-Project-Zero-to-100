@@ -52,7 +52,7 @@ function displayNumbers(numbers) {
 
     for (let index = 0; index < numbers.length; index++) {
 
-        let className = "odd";
+        let className = "";
 
         let number = numbers[index];
         if (number % 2 !== 0) {

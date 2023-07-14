@@ -135,9 +135,24 @@ function displayNumbers(numbers) {
                 </pre>
                 </div>
                 <div class="col-lg-4">
-                    <p>The code is sctructured in one function.</p>
-                    <h5>Hello World</h5>
-                    <p>Hello World is a function that displays an alert with a message of "Hello World". </p>
+                    <p>The code is sctructured in three functions.</p>
+                    <h5>getValues</h5>
+                    <p>getValues is the starter function. It fetches the numbers from the input, validates them by
+                        making
+                        sure they are integers, and then call two other functions, <strong>generateNumbers</strong>, and
+                        <strong>displaynumbers</strong>.
+                    </p><br>
+                    <h5>generateNumbers</h5>
+                    <p>This function uses a for loop to generate numbers from the starting value to the ending value.
+                        The loop will execute until index = eValue.</p><br>
+                    <h5>displayNumbers</h5>
+                    <p>The displayNumbers function is used to print the numbers on the page with bold odd numbers. It
+                        uses an if-else tatement to decide if a number is even or odd, assigning it to the number as a class.
+                        The odd numbers will be displayed <strong>bold</strong> because of the CSS code:<br>
+                        
+                        <code>.odd{<br>
+                            font-weight: bold;<br>
+                            }.</code> </p>
                 </div>
             </div>
         </div>
